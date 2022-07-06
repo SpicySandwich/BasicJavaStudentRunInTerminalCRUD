@@ -1,0 +1,47 @@
+package Student;
+
+public class ExceptionCatcher {
+	
+	public void run() {
+		
+       do {
+    	   InputChoice inputChoice = new InputChoice();
+    	   
+   		
+   		try {
+   			
+   			inputChoice.returnChoice();	
+   			break;
+   		} catch (findbyidError e) {
+   	
+   			System.out.println(e.getMessage().toString());
+   			 inputChoice.returnChoice();
+   			 
+   			
+   		} catch (AgeErrorhandling e) {
+   			
+   			System.out.println(e.getMessage().toString());
+   			 inputChoice.returnChoice();	
+   			
+   		}
+   		
+   		catch (NameErrorHandling e) {
+   			
+   			System.out.println(e.getMessage().toString());
+   			 inputChoice.returnChoice();	
+   			
+   		}
+   		
+   		catch (Exception e) {
+   			System.out.println("Internal Error");
+   			inputChoice.returnChoice();
+   			
+   		}
+	
+    } while (true);
+		
+      
+		
+	}
+
+}

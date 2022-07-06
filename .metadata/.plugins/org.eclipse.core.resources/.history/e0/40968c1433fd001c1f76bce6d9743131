@@ -1,0 +1,9 @@
+package Student;
+
+public class ExceptionCatcher {
+	
+	public void run() {
+		
+	}
+
+}

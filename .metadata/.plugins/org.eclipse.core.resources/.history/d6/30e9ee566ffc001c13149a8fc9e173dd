@@ -1,0 +1,71 @@
+package StudentValidation;
+
+import java.util.Scanner;
+
+public class RunStudent {
+	
+	static Scanner scanner = new Scanner(System.in);
+	static StudentLogic studentLogic = new StudentLogic();
+	
+	static String choice;
+	static String name;
+	 static String id;
+	 
+
+	public static void main(String[] args) {
+		
+	
+		
+		if() {
+			
+		}
+	
+			
+//		System.out.print("Choice: ");
+//		choice = scanner.nextLine();
+		 
+		
+		
+//	
+//		String name2 = studentLogic.inputName(name);
+//		Integer age2 = studentLogic.inputAge(integer);
+		
+//		System.out.println("\nMy name is "+ name2);
+//		System.out.println("My age is "+age2);
+	
+		
+	
+		System.out.println();
+		
+		scanner.close();
+		
+
+	}
+	
+	
+	public static void returnChoice() {
+		
+		System.out.print("Choose a function: ");
+		 String choice = scanner.nextLine();
+		 
+			switch (choice) {
+				case "find":
+					studentLogic.findbyid(id);
+					break;
+				case "list":
+					studentLogic.List();
+					break;
+					
+				case "delete":
+					studentLogic.deletebyid(id);
+					break;
+
+				default:
+					break;
+			}
+	}
+	
+
+
+
+}

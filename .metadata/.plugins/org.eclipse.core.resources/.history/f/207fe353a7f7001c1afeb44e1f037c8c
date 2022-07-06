@@ -1,0 +1,32 @@
+package StudentValidation;
+
+public class StudentValidation implements validationInterface{
+
+
+
+	@Override
+	public String checkname(String name) {
+		
+	if (name.isEmpty() || name == null) throw new NameErrorHandling("Name Error");
+		
+		return name;
+	}
+
+	@Override
+	public Integer checkage(Integer age) {
+		
+	
+	if (null == age || age == 0) throw new AgeErrorhandling("Age Error");
+		
+	else if(age <= 17) System.out.println("Under age");
+		
+		return age;
+	}
+	
+	
+	
+	
+	
+	
+
+}

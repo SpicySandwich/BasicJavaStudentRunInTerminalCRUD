@@ -1,0 +1,31 @@
+package Student;
+
+public class RunStudent {
+	
+	public static void main(String[] args) {
+		
+		InputChoice inputChoice = new InputChoice();
+		
+		
+		try {
+			
+			inputChoice.returnChoice();	
+		} catch (findbyidError e) {
+			 inputChoice.returnChoice();	
+			
+		} catch (Exception e) {
+			
+			System.out.println("Internal Error");
+			
+		}
+		
+
+	}
+	
+	
+
+	
+
+
+
+}

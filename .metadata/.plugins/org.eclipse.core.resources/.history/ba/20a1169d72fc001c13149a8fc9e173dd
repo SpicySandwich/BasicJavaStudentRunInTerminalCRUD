@@ -1,0 +1,48 @@
+package StudentValidation;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class DataUtil {
+	
+	HashMap<Integer, StudentEntity> sMap = (HashMap<Integer, StudentEntity>) datas();
+	
+	public static Map<Integer, StudentEntity> datas(){
+	 Map<Integer, StudentEntity> sMap = new HashMap<>();
+		 
+		sMap.put(1, new StudentEntity(1,"Conred",27));
+		sMap.put(2, new StudentEntity(2,"Batman",28));
+		sMap.put(3, new StudentEntity(3,"Superman",14));
+		sMap.put(4, new StudentEntity(4,"Joker",16));
+		sMap.put(5, new StudentEntity(5,"Alas-as",39));
+	
+		
+		return sMap;
+		
+	}
+	
+	public void getInfoById(Integer id) {
+
+		System.out.println(sMap.get(id));
+		
+	}
+	
+	public void ListInfo() {
+
+		for(Map.Entry datamap: sMap.entrySet()) {
+			System.out.println(datamap.getKey()+" : "+ datamap.getValue());
+		}
+	}
+	
+	public void deleteById(Integer id) {
+
+		
+		StudentEntity returned_value = (StudentEntity)sMap.remove(id);
+		for(Map.Entry datamap: sMap.entrySet()) {
+			System.out.println(datamap.getKey()+" : "+ datamap.getValue());
+		}
+		 System.out.println("Succefulley Delete id : "+ returned_value.getId());
+	}
+	
+
+}

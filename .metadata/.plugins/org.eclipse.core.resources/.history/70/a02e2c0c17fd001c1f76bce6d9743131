@@ -1,0 +1,27 @@
+package Student;
+
+import java.util.Scanner;
+
+public class RunStudent {
+	
+
+	public static void main(String[] args) {
+		
+		InputChoice inputChoice = new InputChoice();
+		
+		inputChoice.returnChoice();
+	
+		System.out.println();
+		
+		
+		
+
+	}
+	
+	
+
+	
+
+
+
+}

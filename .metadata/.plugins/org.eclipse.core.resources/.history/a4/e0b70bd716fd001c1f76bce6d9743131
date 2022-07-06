@@ -1,0 +1,61 @@
+package Student;
+
+import java.util.Scanner;
+
+public class RunStudent {
+	
+	static Scanner scanner = new Scanner(System.in);
+	static StudentLogic studentLogic = new StudentLogic();
+	
+
+	 
+
+	public static void main(String[] args) {
+		
+	   returnChoice();
+	
+		System.out.println();
+		
+		scanner.close();
+		
+
+	}
+	
+	
+	public static void returnChoice() {
+		
+
+		
+		System.out.print("Choose a function: ");
+		 String choice = scanner.nextLine();
+		 String id = null;
+		 
+			switch (choice) {
+				case "find":
+					studentLogic.findbyid(id);
+					returnChoice();
+				
+				case "list":
+					studentLogic.List();
+					returnChoice();
+					
+				case "delete":
+					studentLogic.deletebyid(id);
+					returnChoice();
+				case "update":
+					studentLogic.updatebyid(id);
+					returnChoice();
+				case "create":
+					studentLogic.createdata(id);;
+					returnChoice();
+
+				default:
+					break;
+			}
+			
+	}
+	
+
+
+
+}

@@ -1,0 +1,30 @@
+package Student;
+
+import java.util.Scanner;
+
+public class RunStudent {
+	
+	
+	
+	
+
+	 
+
+	public static void main(String[] args) {
+		
+	   returnChoice();
+	
+		System.out.println();
+		
+		
+		
+
+	}
+	
+	
+
+	
+
+
+
+}
