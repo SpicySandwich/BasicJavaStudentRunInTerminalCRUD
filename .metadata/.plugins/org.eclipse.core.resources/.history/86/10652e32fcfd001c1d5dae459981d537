@@ -1,0 +1,16 @@
+package Student;
+
+public enum CourseType {
+	
+	BSIT("dgdr"),
+	COE("dgdr");
+	
+	private final String courseTypes;
+
+	private CourseType(String courseTypes) {
+		this.courseTypes = courseTypes;
+	}
+	
+	
+
+}

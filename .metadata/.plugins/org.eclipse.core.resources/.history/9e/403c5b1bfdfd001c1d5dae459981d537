@@ -1,0 +1,11 @@
+package Student;
+
+public enum CourseTime {
+	
+	AM(),
+	PM();
+	
+	
+	private Integer time;
+
+}

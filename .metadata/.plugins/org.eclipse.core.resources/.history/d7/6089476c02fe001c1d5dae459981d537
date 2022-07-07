@@ -1,0 +1,45 @@
+package Student;
+
+
+
+public class Course {
+	
+	CourseType courseType;
+    boolean SubjectType;
+	
+	public Course() {
+		super();
+	}
+
+	public Course(CourseType courseType, boolean subjectType) {
+		super();
+		this.courseType = courseType;
+		SubjectType = subjectType;
+	}
+
+	public CourseType getCourseType() {
+		return courseType;
+	}
+
+	public void setCourseType(CourseType courseType) {
+		this.courseType = courseType;
+	}
+
+	public boolean isSubjectType() {
+		return SubjectType;
+	}
+
+	public void setSubjectType(boolean subjectType) {
+		SubjectType = subjectType;
+	}
+	
+	
+	
+	
+
+ 
+	
+	
+	
+
+}

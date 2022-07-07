@@ -1,0 +1,22 @@
+package Student;
+
+public enum CourseType {
+	
+	BSIT("Bachelor of Science Information Technology"),
+	COE("dgdr");
+	
+	private final String courseTypes;
+
+	private CourseType(String courseTypes) {
+		this.courseTypes = courseTypes;
+	}
+
+	public String getCourseTypes() {
+		return courseTypes;
+	}
+	
+	
+	
+	
+
+}

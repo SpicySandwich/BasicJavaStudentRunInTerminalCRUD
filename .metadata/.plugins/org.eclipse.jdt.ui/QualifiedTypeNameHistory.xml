@@ -19,4 +19,9 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="StudentValidation.findbyidError"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="Student.InputChoice"/>
+    <fullyQualifiedTypeName name="Student.findbyidError"/>
+    <fullyQualifiedTypeName name="Student.ExceptionCatcher"/>
+    <fullyQualifiedTypeName name="Student.AgeErrorhandling"/>
+    <fullyQualifiedTypeName name="Student.NameErrorHandling"/>
 </qualifiedTypeNameHistroy>

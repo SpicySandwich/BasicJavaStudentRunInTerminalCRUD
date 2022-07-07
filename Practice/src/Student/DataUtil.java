@@ -1,7 +1,13 @@
 package Student;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DataUtil {
 	
@@ -9,12 +15,19 @@ public class DataUtil {
 	
 	public static Map<Integer, StudentEntity> datas(){
 	 Map<Integer, StudentEntity> sMap = new HashMap<>();
+	 
+	 SubjectType subjectType = null;
+	 
+	 List< SubjectType > list1 = List.of( subjectType.CO, subjectType.P) ;
+	 List< SubjectType > list2 = List.of( subjectType.ITF, subjectType.DS) ;
+	 List< SubjectType > list3 = List.of( subjectType.P) ;
+
 		 
-		sMap.put(1, new StudentEntity("Conred",27));
-		sMap.put(2, new StudentEntity("Batman",28));
-		sMap.put(3, new StudentEntity("Superman",14));
-		sMap.put(4, new StudentEntity("Joker",16));
-		sMap.put(5, new StudentEntity("Alas-as",39));
+		sMap.put(1, new StudentEntity("Conred",27,new Course(CourseType.BSIT,list3)));
+		sMap.put(2, new StudentEntity("Batman",28,new Course(CourseType.BSCE,list1 )));
+		sMap.put(3, new StudentEntity("Superman",14,new Course(CourseType.BSA,list2)));
+		sMap.put(4, new StudentEntity("Joker",16,new Course(CourseType.BSTM,list2)));
+		sMap.put(5, new StudentEntity("Alas-as",39,new Course(CourseType.BSIT,list1 )));
 	
 		
 		return sMap;
@@ -38,12 +51,17 @@ public class DataUtil {
 	}
 	
 	public void updateById(Integer id,String name, Integer age) {
-		sMap.replace(id, new StudentEntity(name,age));
+      List<SubjectType> list = new ArrayList<SubjectType>();
+		
+		CourseType courseType = null;
+		sMap.replace(id, new StudentEntity(name,age, new Course(courseType, list)));
 		
 	}
 	
-	public void createdata(Integer id,String name, Integer age) {
-		sMap.put(id, new StudentEntity(name,age));
+	public void createdata(Integer id,String name, Integer age,String courseType,String list) {
+		 
+
+		sMap.put(id, new StudentEntity(name,age, new Course(coursemethod(courseType), subjectmethod(list))));
 		
 	}
 	
@@ -52,6 +70,23 @@ public class DataUtil {
 		 if (sMap.containsKey(id) == valid)return valid;
 		 else return false;
 	
+	}
+	
+	public static CourseType coursemethod(String courseType) {
+	//	CourseType.valueOf(courseType).getCourseTypes();
+		
+		return CourseType.valueOf(courseType);
+		
+	
+		
+		
+		
+	}
+	
+	public List<SubjectType> subjectmethod(String list){
+			
+	return Arrays.asList(SubjectType.valueOf(list));
+		
 	}
 	
 

@@ -1,0 +1,14 @@
+package Student;
+
+public enum SubjectType {
+	
+	ITF("IT Fundamentals"),
+	P("Programming"),
+	DS("Discrete Structure"),
+	CO("Computer Organization");
+	
+	
+	private String subject;
+	
+
+}

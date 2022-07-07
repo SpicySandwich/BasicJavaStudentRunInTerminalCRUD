@@ -1,0 +1,120 @@
+package Student;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class StudentLogic {
+	
+	StudentEntity studentEntity = new StudentEntity();
+	StudentValidation studentValidation = new StudentValidation();
+	static Scanner scanner = new Scanner(System.in);
+	static DataUtil dataUtil = new DataUtil();
+	static Convert convert = new Convert();
+	static String name;
+	static String age;
+	static String course;
+	static String subject;
+
+	
+
+	public void findbyid(String idstring) {
+
+		System.out.print("Find by id: ");
+		idstring = scanner.nextLine();
+		checkidnotpresent(idstring);
+		Integer id = Integer.parseInt(convert.convert(idstring));
+		dataUtil.getInfoById(studentValidation.checkid(id));
+	}
+	
+	public void List() {
+		dataUtil.ListInfo();	
+	}
+	
+	
+	public void deletebyid(String idstring) {
+		
+		System.out.print("Delete by id: ");
+		idstring = scanner.nextLine();
+		checkidnotpresent(idstring);
+		Integer id = Integer.parseInt(convert.convert(idstring));
+		dataUtil.deleteById(studentValidation.checkid(id));
+		System.out.println("Succefulley Delete id : "+ id);
+	}
+	
+	public void updatebyid(String idstring) {
+		
+		System.out.print("update by id: ");
+		idstring = scanner.nextLine();
+		checkidnotpresent(idstring);
+		System.out.print("Name: ");
+		name = scanner.nextLine();
+		System.out.print("Age: ");
+		age = scanner.nextLine();
+		
+		Integer id = Integer.parseInt(convert.convert(idstring));
+		Integer age2 = Integer.parseInt(convert.convert(age));
+		
+		dataUtil.updateById(studentValidation.checkid(id),studentValidation.checkname(name),studentValidation.checkage(age2));
+		System.out.println("Succefully update id:"+id);
+	}
+	
+	public void createdata(String idstring) {
+
+		System.out.print("create id: ");
+		idstring = scanner.nextLine();
+		checkidpresent(idstring);
+		System.out.print("Name: ");
+		name = scanner.nextLine();
+		System.out.print("Age: ");
+		age = scanner.nextLine();
+		
+		System.out.print("Course: ");
+		course = scanner.nextLine();
+		
+		CourseType courseType = null;
+		courseType.setCourseTypes(course);
+		
+		System.out.print("Subject: ");
+		subject = scanner.nextLine();
+		
+		SubjectType subjectType = null;
+	
+		subjectType.setSubject(subject);
+
+		java.util.List< SubjectType > list = new ArrayList<SubjectType>() ;
+		list.add(subjectType.valueOf(subjectType.getSubject()));
+	
+	
+		SubjectType.CO.setSubject(scanner.nextLine());
+		
+		
+		
+		Integer id = Integer.parseInt(convert.convert(idstring));
+		Integer age2 = Integer.parseInt(convert.convert(age));
+		
+		dataUtil.createdata(
+				studentValidation.checkid(id), 
+				studentValidation.checkname(name),
+				studentValidation.checkage(age2),
+				CourseType.valueOf(course),
+				list
+				);
+		System.out.println("Succefully created data with id:"+id);
+	}
+	
+	 public void checkidnotpresent(String idstring) {
+			Integer id = Integer.parseInt(convert.convert(idstring));
+			if (dataUtil.checkidexist(id) == false) throw new findbyidError("ID: "+ id +" not found or not exist");
+				
+		}
+	 public void checkidpresent(String idstring) {
+			Integer id = Integer.parseInt(convert.convert(idstring));
+			if (dataUtil.checkidexist(id) == true) throw new findbyidError("ID: "+ id +" is exist cannot be created. Input another ID..");
+				
+		}
+	 
+	 
+		
+	
+	
+}

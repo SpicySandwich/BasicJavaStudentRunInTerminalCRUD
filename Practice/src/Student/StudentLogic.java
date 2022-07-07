@@ -1,5 +1,6 @@
 package Student;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentLogic {
@@ -11,6 +12,9 @@ public class StudentLogic {
 	static Convert convert = new Convert();
 	static String name;
 	static String age;
+	static String course;
+	static String subject;
+
 	
 
 	public void findbyid(String idstring) {
@@ -64,10 +68,29 @@ public class StudentLogic {
 		System.out.print("Age: ");
 		age = scanner.nextLine();
 		
+		System.out.print("Course: ");
+		course = scanner.nextLine();
+
+		
+		System.out.print("Subject: ");
+		subject = scanner.nextLine();
+		
+//		java.util.List<String> list = new ArrayList<String>();
+//		list.add(subject);
+	
+		
 		Integer id = Integer.parseInt(convert.convert(idstring));
 		Integer age2 = Integer.parseInt(convert.convert(age));
 		
-		dataUtil.createdata(studentValidation.checkid(id), studentValidation.checkname(name),studentValidation.checkage(age2));
+	
+		
+		dataUtil.createdata(
+				studentValidation.checkid(id), 
+				studentValidation.checkname(name),
+				studentValidation.checkage(age2),
+				course,
+				subject 
+				);
 		System.out.println("Succefully created data with id:"+id);
 	}
 	

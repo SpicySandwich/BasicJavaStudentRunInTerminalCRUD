@@ -1,0 +1,21 @@
+package Student;
+
+public class StudentEntity {
+	
+
+	private String name;
+	private Integer age;
+	private Course course;
+	
+	
+	public StudentEntity() {
+		super();
+	}
+
+
+
+	
+	
+
+
+}

@@ -1,0 +1,10 @@
+package Student;
+
+public enum SubjectType {
+	
+	
+	
+	private String subject;
+	
+
+}

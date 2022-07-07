@@ -1,7 +1,0 @@
-package StudentValidation;
-
-public class findbyidError extends RuntimeException{
-
-	private static final long serialVersionUID = 1L;
-
-}

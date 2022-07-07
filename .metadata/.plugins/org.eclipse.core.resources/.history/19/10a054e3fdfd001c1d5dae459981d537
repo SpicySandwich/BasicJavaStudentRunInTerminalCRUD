@@ -1,0 +1,25 @@
+package Student;
+
+public enum CourseRoom {
+	
+	AM(1),
+	PM(2);
+	
+	
+	private Integer time;
+
+	private CourseRoom(Integer time) {
+		this.time = time;
+	}
+
+	public Integer getTime() {
+		return time;
+	}
+
+	public void setTime(Integer time) {
+		this.time = time;
+	}
+	
+	
+
+}

@@ -1,0 +1,10 @@
+package Student;
+
+import java.util.List;
+
+public class Course {
+	
+	CourseType courseType;
+	List<SubjectType> subject;
+
+}

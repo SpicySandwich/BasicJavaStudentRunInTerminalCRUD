@@ -1,0 +1,51 @@
+package Student;
+
+
+
+public class Course {
+	
+	String CourseType;
+    boolean SubjectType;
+	
+	public Course() {
+		super();
+	}
+
+	public Course(String courseType, boolean subjectType) {
+		super();
+		CourseType = courseType;
+		SubjectType = subjectType;
+	}
+
+	public String getCourseType() {
+		return CourseType;
+	}
+
+	public void setCourseType(String courseType) {
+		CourseType = courseType;
+	}
+
+	public boolean isSubjectType() {
+		return SubjectType;
+	}
+
+	public void setSubjectType(boolean subjectType) {
+		SubjectType = subjectType;
+	}
+
+	@Override
+	public String toString() {
+		return "Course [CourseType=" + CourseType + ", SubjectType=" + SubjectType + "]";
+	}
+
+	
+	
+	
+	
+
+ 
+	
+	
+	
+
+}
