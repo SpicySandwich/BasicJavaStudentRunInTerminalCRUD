@@ -1,0 +1,20 @@
+package Student;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class testrun {
+	
+	public static void main(String[] Args) {
+		
+    Scanner scanner = new Scanner(System.in);
+        
+        List<Long> numbers = new ArrayList<Long>();
+  while (scanner.hasNextLong()) {
+      numbers.append(scanner.nextLong());
+  }
+      
+		
+	}
+
+}

@@ -12,8 +12,6 @@
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="StudentValidation.StudentValidation"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="StudentValidation.StudentEntity"/>
     <fullyQualifiedTypeName name="StudentValidation.DataUtil"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
@@ -24,4 +22,18 @@
     <fullyQualifiedTypeName name="Student.ExceptionCatcher"/>
     <fullyQualifiedTypeName name="Student.AgeErrorhandling"/>
     <fullyQualifiedTypeName name="Student.NameErrorHandling"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.util.EnumSet"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collector"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="Student.Course"/>
+    <fullyQualifiedTypeName name="Student.CourseType"/>
+    <fullyQualifiedTypeName name="Student.SubjectType"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.stream.Stream"/>
 </qualifiedTypeNameHistroy>

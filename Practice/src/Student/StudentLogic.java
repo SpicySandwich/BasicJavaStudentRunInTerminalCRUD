@@ -1,6 +1,7 @@
 package Student;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class StudentLogic {
@@ -51,10 +52,40 @@ public class StudentLogic {
 		System.out.print("Age: ");
 		age = scanner.nextLine();
 		
+		System.out.print("Course: ");
+		course = scanner.nextLine();
+		
+		int insertSubject = 4;
+	    int countSubject = 0;
+	    
+	    List<String> strings = new ArrayList<String>();
+	     
+	     do {
+	    	 System.out.print( ++countSubject + ": Enter Subject: ");
+	    	 subject = scanner.nextLine().toUpperCase();
+	    	 strings.add(subject);
+	    	 insertSubject--;
+		
+	     } while (insertSubject > 0);   
+			
+		
+		
+		if(insertSubject == 0) {
+			
+			System.out.println("Subject is 4 max only");
+		}
+		
+		
 		Integer id = Integer.parseInt(convert.convert(idstring));
 		Integer age2 = Integer.parseInt(convert.convert(age));
 		
-		dataUtil.updateById(studentValidation.checkid(id),studentValidation.checkname(name),studentValidation.checkage(age2));
+		dataUtil.updateById(
+				studentValidation.checkid(id),
+				studentValidation.checkname(name),
+				studentValidation.checkage(age2),
+				course,
+				strings
+				);
 		System.out.println("Succefully update id:"+id);
 	}
 	
@@ -72,11 +103,26 @@ public class StudentLogic {
 		course = scanner.nextLine();
 
 		
-		System.out.print("Subject: ");
-		subject = scanner.nextLine();
-		
-//		java.util.List<String> list = new ArrayList<String>();
-//		list.add(subject);
+		   int insertSubject = 4;
+		    int countSubject = 0;
+		    
+		    List<String> strings = new ArrayList<String>();
+		     
+		     do {
+		    	 System.out.print( ++countSubject + ": Enter Subject: ");
+		    	 subject = scanner.nextLine().toUpperCase();
+		    	 strings.add(subject);
+		    	 insertSubject--;
+			
+		     } while (insertSubject > 0);   
+				
+			
+			
+			if(insertSubject == 0) {
+				
+				System.out.println("Subject is 4 max only");
+			}
+			
 	
 		
 		Integer id = Integer.parseInt(convert.convert(idstring));
@@ -89,7 +135,7 @@ public class StudentLogic {
 				studentValidation.checkname(name),
 				studentValidation.checkage(age2),
 				course,
-				subject 
+				strings
 				);
 		System.out.println("Succefully created data with id:"+id);
 	}

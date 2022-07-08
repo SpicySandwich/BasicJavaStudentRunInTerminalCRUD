@@ -1,0 +1,33 @@
+package Student;
+
+import java.util.Scanner;
+
+public class InputList {
+	
+	public void subjectInputList(String subject) {
+		
+    Scanner scanner = new Scanner(System.in);
+    
+    int insertSubject = 4;
+    int countSubject = 0;
+     
+     do {
+    	 System.out.print( ++countSubject + ": Enter Subject: ");
+    	 subject = scanner.nextLine().toUpperCase();
+    	 insertSubject--;
+	
+     } while (insertSubject > 0);   
+		
+	
+	
+	if(insertSubject == 0) {
+		
+		System.out.println("Subject is 4 max only");
+	}
+	
+	scanner.close();
+
+	
+}
+
+}

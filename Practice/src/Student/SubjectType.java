@@ -5,7 +5,10 @@ public enum SubjectType {
 	ITF("IT Fundamentals"),
 	P("Programming"),
 	DS("Discrete Structure"),
-	CO("Computer Organization");
+	CO("Computer Organization"),
+	M("Math"),
+	S("Science"),
+	E("English");
 	
 	private String subject;
 	

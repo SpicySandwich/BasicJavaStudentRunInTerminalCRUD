@@ -3,11 +3,9 @@ package Student;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class DataUtil {
 	
@@ -50,15 +48,12 @@ public class DataUtil {
 		 
 	}
 	
-	public void updateById(Integer id,String name, Integer age) {
-      List<SubjectType> list = new ArrayList<SubjectType>();
-		
-		CourseType courseType = null;
-		sMap.replace(id, new StudentEntity(name,age, new Course(courseType, list)));
+	public void updateById(Integer id,String name, Integer age,String courseType,List<String>list) {
+		sMap.replace(id, new StudentEntity(name,age, new Course(coursemethod(courseType), subjectmethod(list))));
 		
 	}
 	
-	public void createdata(Integer id,String name, Integer age,String courseType,String list) {
+	public void createdata(Integer id,String name, Integer age,String courseType,List<String>list) {
 		 
 
 		sMap.put(id, new StudentEntity(name,age, new Course(coursemethod(courseType), subjectmethod(list))));
@@ -73,8 +68,7 @@ public class DataUtil {
 	}
 	
 	public static CourseType coursemethod(String courseType) {
-	//	CourseType.valueOf(courseType).getCourseTypes();
-		
+
 		return CourseType.valueOf(courseType);
 		
 	
@@ -83,9 +77,20 @@ public class DataUtil {
 		
 	}
 	
-	public List<SubjectType> subjectmethod(String list){
+	public List<SubjectType> subjectmethod(List<String>list){
+		
+
+		List<SubjectType> objectList = new ArrayList<SubjectType>();
+		
+		
+		for(String s : list) {
 			
-	return Arrays.asList(SubjectType.valueOf(list));
+			SubjectType subjectType = Enum.valueOf(SubjectType.class, s);
+			objectList.add(subjectType);
+		}
+	
+			
+	return objectList;
 		
 	}
 	

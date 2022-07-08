@@ -1,0 +1,35 @@
+package Student;
+
+import java.util.Scanner;
+
+public class testrun {
+	
+	public static void main(String[] Args) {
+		
+    Scanner scanner = new Scanner(System.in);
+    
+    int insertSubject = 4;
+    int countSubject = 0;
+    
+        
+        
+        
+     do {
+    	 System.out.println( ++countSubject + "Enter Subject: ");
+    	 String word = scanner.nextLine();
+    	 insertSubject--;
+	
+     } while (insertSubject > 0);   
+		
+	
+	
+	if(insertSubject == 0) {
+		
+		System.out.println("Subject is 4 max only");
+	}
+	
+	scanner.close();
+	
+}
+
+}
