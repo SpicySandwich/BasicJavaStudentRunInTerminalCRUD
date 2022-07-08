@@ -1,0 +1,16 @@
+package Student;
+
+public class UserSecurity {
+	
+	ExceptionCatcher running = new ExceptionCatcher();
+
+	
+	public void userAndPass() {
+		
+		
+		
+		
+		running.run();
+	}
+
+}

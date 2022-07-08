@@ -4,9 +4,9 @@ public class RunStudent {
 	
 	public static void main(String[] args) {
 		
-		ExceptionCatcher running = new ExceptionCatcher();
+		UserSecurity security = new UserSecurity();
 		
-		running.run();
+		security.userAndPass();
 
 	}
 

@@ -1,0 +1,38 @@
+package Student;
+
+import java.util.Scanner;
+
+public class UserSecurity {
+	
+	ExceptionCatcher running = new ExceptionCatcher();
+	static Scanner scanner = new Scanner(System.in);
+	static String username = "conred";
+	static String password = "1234";
+	
+	public void userAndPass() {
+		
+		Integer tryLimit = 3;
+		Integer countTry = 0;
+		boolean valid = true;
+		
+		
+		do {
+			
+			username = scanner.nextLine();
+			
+			if (username ) {
+				
+			}
+			
+			break;
+			
+		} while (tryLimit > 0);
+		
+	}
+	
+	public void runningApp() {
+		
+		running.run();
+	}
+
+}

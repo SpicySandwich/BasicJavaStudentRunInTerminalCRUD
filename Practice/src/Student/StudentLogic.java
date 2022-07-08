@@ -70,10 +70,8 @@ public class StudentLogic {
 			
 		
 		
-		if(insertSubject == 0) {
-			
-			System.out.println("Subject is 4 max only");
-		}
+		if(insertSubject == 0)System.out.println("Subject is 4 max only");
+		
 		
 		
 		Integer id = Integer.parseInt(convert.convert(idstring));
@@ -118,10 +116,8 @@ public class StudentLogic {
 				
 			
 			
-			if(insertSubject == 0) {
-				
-				System.out.println("Subject is 4 max only");
-			}
+			if(insertSubject == 0)System.out.println("Subject is 4 max only");
+			
 			
 	
 		
