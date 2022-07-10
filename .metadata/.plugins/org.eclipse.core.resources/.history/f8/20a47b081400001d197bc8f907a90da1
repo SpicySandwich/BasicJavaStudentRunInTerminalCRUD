@@ -1,0 +1,12 @@
+package Student;
+
+import java.util.Map;
+
+public class LoginUtil {
+	
+	public static Map<LoginUtil > datas(){
+		
+		
+	}
+
+}

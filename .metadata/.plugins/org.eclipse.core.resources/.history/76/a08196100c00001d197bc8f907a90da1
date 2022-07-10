@@ -1,0 +1,62 @@
+package Student;
+
+import java.util.Scanner;
+
+public class UserSecurity {
+	
+	ExceptionCatcher running = new ExceptionCatcher();
+	static Scanner scanner = new Scanner(System.in);
+	
+	static Integer tryLimit = 4;
+	
+	public void userAndPass() {
+		
+	
+		Integer countTry = 0;
+		boolean valid = true;
+		
+		
+		do {
+			
+			System.out.print("\nEnter username: ");
+			String username = scanner.nextLine();
+			System.out.print("Enter password: ");
+			String password = scanner.nextLine();
+			
+			if (username.contains("conred") == valid && password.contains("1234")) {
+				runningApp();
+				break;
+			}else {
+				
+				country(countTry);
+				
+			}
+				
+			
+			tryLimit--;
+			
+			
+		} while (tryLimit > 0);
+		
+		
+		locked(tryLimit);
+		
+	}
+	
+	public void runningApp() {
+		
+		running.run();
+	}
+	
+	public void locked(Integer trylimits) {
+		if (trylimits == 0) System.err.println("\nApplication is now locked");
+	}
+	
+	public Integer country(Integer counttry) {
+		
+      if (counttry == null) System.err.print("\nAttempt "+ ++counttry+": Try Again\n");
+      else locked(tryLimit);
+	return counttry;
+	}
+
+}

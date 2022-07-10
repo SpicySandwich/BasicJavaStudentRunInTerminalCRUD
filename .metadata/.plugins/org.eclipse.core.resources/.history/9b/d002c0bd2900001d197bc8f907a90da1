@@ -1,0 +1,15 @@
+package Student;
+
+import Student.ExceptionCatcher;
+
+public class RunStudent {
+	
+	public static void main(String[] args) {
+		
+		ExceptionCatcher catcher = new ExceptionCatcher();
+		
+		catcher.run();
+
+	}
+
+}

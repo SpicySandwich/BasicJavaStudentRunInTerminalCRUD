@@ -1,0 +1,38 @@
+package Student;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class LoginUtil {
+	
+   public static void main (String[] args) {
+		
+	
+		
+	}
+	
+	
+	static HashMap<Class<? extends LoginEntity>, LoginEntity> msMap =  (HashMap<Class<? extends LoginEntity>, LoginEntity>) datas();
+	
+	public static Map<Class<? extends LoginEntity>, LoginEntity> datas(){
+		
+		LoginEntity pUtil = new LoginEntity();
+		
+		
+		msMap.put(pUtil.getClass(),pUtil);
+		msMap.put(pUtil.getClass(),pUtil);
+		
+		return msMap;
+		
+	}
+	
+	public static void ListInfo() {
+		for(Map.Entry datamap: msMap.entrySet()) {
+			System.out.println(datamap.getKey()+" : "+ datamap.getValue());
+		}
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,14 @@
+package Student;
+
+public class LoginValidation {
+	
+	public String check(LoginEntity loginEntity) {
+		
+		loginEntity.getPassword();
+		loginEntity.getUsername();
+		
+	}
+	
+	
+
+}

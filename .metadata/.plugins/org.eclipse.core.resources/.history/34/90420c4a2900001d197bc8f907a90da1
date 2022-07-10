@@ -1,0 +1,10 @@
+package StudentMainRun;
+
+public interface validationInterface {
+	
+	public String checkname(String name);
+	public Integer checkage(Integer age);
+	public Integer checkid(Integer id);
+	
+
+}

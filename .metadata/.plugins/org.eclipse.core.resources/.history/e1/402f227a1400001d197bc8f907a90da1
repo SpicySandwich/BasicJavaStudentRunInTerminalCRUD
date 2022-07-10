@@ -1,0 +1,18 @@
+package Student;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class LoginUtil {
+	
+	public static Map<Class<? extends LoginUtil>, LoginUtil> datas(){
+		Map<Class<? extends LoginUtil>, LoginUtil> msMap = new HashMap<Class<? extends LoginUtil>, LoginUtil>();
+		LoginUtil pUtil = new LoginUtil();
+		
+		msMap.put(pUtil.getClass(),pUtil);
+		
+		return msMap;
+		
+	}
+
+}

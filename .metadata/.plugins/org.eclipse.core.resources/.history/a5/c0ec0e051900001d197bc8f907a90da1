@@ -1,0 +1,17 @@
+package Student;
+
+import java.util.HashMap;
+
+public class LoginUtil {
+	
+	HashMap<String, LoginEntity> sMap = (HashMap<String, LoginEntity>) datas();
+
+	private HashMap<String, LoginEntity> datas() {
+		
+		
+		
+		return null;
+	}
+	
+
+}

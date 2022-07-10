@@ -1,0 +1,11 @@
+package Student;
+
+public class LoginValidation {
+	
+	public  string check(String username,String password) {
+		
+	}
+	
+	
+
+}

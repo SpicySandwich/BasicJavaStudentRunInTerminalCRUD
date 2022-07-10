@@ -1,0 +1,10 @@
+package Student;
+
+public class LoginEntity {
+	
+	private String username;
+	private String password;
+	
+	
+
+}

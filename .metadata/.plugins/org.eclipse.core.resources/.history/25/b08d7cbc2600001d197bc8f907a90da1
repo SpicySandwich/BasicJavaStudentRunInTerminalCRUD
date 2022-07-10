@@ -1,0 +1,52 @@
+package Student;
+
+public class LoginValidation {
+	
+	
+	
+	
+     public boolean checkpassword(String username) {
+		
+		boolean valid = true;
+	
+		
+		if (username.equals(username) == valid) return true;
+			
+			
+     }
+	
+	
+	
+	
+	public String getusername(LoginEntity loginEntity) {
+		
+		 loginEntity.getUsername();
+		 
+		 return checkusername(loginEntity.getUsername());
+		
+	}
+	
+      public String checkusername(String username) {
+		
+		boolean valid = true;
+	
+		
+		if (username.equals(getusername(username)) == valid) return true;
+		return valid;
+			
+			
+     }
+	
+	
+	
+	
+	
+     public String getpassword(LoginEntity loginEntity) {
+		
+    	 return loginEntity.getPassword();
+		
+	}
+	
+	
+
+}

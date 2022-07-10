@@ -1,0 +1,61 @@
+package Student;
+
+import java.util.Scanner;
+
+public class LoginLogic {
+	
+	static Scanner scanner = new Scanner(System.in);
+	static LoginUtil loginUtil = new LoginUtil();
+	
+	
+	
+	public void addLoginUser() {
+		
+		System.out.println("Add User: ");
+		
+		String key;
+		String username;
+		String password;
+		
+		scanner.nextLine();
+		scanner.nextLine();
+		scanner.nextLine();
+		
+		
+		
+		loginUtil.addlogin(key, username, password);
+		
+		
+	}
+	
+    public void updateLoginUser() {
+		
+    	loginUtil.updateLogin(null, null, null);
+		
+	}
+    
+    public void deleteLoginUser() {
+    	
+    	
+		
+    	loginUtil.deletelogin(null);
+	}
+    
+    
+    public boolean ifNotFound(String key) {
+    	
+    	loginUtil.checkidexist(null);
+		return false;
+    	
+    }
+    
+     public boolean ifFound(String key) {
+    	 loginUtil.checkidexist(null);
+		return false;
+    	
+    }
+	
+	
+	
+
+}

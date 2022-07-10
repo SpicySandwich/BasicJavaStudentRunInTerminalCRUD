@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="StudentValidation.validationInterface"/>
     <fullyQualifiedTypeName name="StudentValidation.StudentLogic"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="StudentValidation.StudentException"/>
     <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
@@ -16,7 +15,6 @@
     <fullyQualifiedTypeName name="StudentValidation.DataUtil"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="StudentValidation.findbyidError"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="Student.InputChoice"/>
     <fullyQualifiedTypeName name="Student.findbyidError"/>
     <fullyQualifiedTypeName name="Student.ExceptionCatcher"/>
@@ -29,11 +27,15 @@
     <fullyQualifiedTypeName name="Student.Course"/>
     <fullyQualifiedTypeName name="Student.CourseType"/>
     <fullyQualifiedTypeName name="Student.SubjectType"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.stream.Stream"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="Student.InputList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="Student.UserSecurity"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

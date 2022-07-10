@@ -1,0 +1,124 @@
+package Student;
+
+import java.util.Scanner;
+
+public class LoginLogic {
+	
+	static Scanner scanner = new Scanner(System.in);
+	static LoginUtil loginUtil = new LoginUtil();
+	static LoginValidation validation = new LoginValidation();
+	
+	
+	public void login() {
+		
+      System.out.println("\nLogin\n");
+		
+		String username;
+		String password;
+
+		
+		System.out.print("Verify username: ");
+		username = scanner.nextLine();
+		System.out.print("Enter password");
+		password = scanner.nextLine();
+		
+		ifNotFound(username);
+		
+		LoginEntity loginEntity = loginUtil.checkforlogin(username);
+		
+		validation.checklogin(loginEntity, username, password);
+		
+		
+		
+	}
+	
+	
+	
+	public void addLoginUser() {
+		
+		System.out.println("Add User\n");
+		
+		String key;
+		String username;
+		String password;
+		String passwordverify;
+		
+		System.out.print("Enter username: ");
+		key = scanner.nextLine();
+		System.out.print("Verify username: ");
+		username = scanner.nextLine();
+		System.out.print("Enter password");
+		password = scanner.nextLine();
+		System.out.print("Verify password");
+		passwordverify = scanner.nextLine();
+		
+		ifFound(username);
+		
+		if(!password.equals(passwordverify)) throw new NotMatch("\nPassword not match");
+		if(!key.equals(username))throw new NotMatch("\nUsername not match");
+		
+		loginUtil.addlogin(key, username, password);
+		
+		
+	}
+	
+    public void updateLoginUser() {
+    	
+System.out.println("Update User\n");
+		
+		String key;
+		String username;
+		String password;
+		String passwordverify;
+		
+		System.out.print("Enter username: ");
+		key = scanner.nextLine();
+		System.out.print("Verify username: ");
+		username = scanner.nextLine();
+		System.out.print("Enter password");
+		password = scanner.nextLine();
+		System.out.print("Verify password");
+		passwordverify = scanner.nextLine();
+		
+		ifNotFound(username);
+		
+		
+		if(!password.equals(passwordverify)) throw new NotMatch("\nPassword not match");
+		if(!key.equals(username))throw new NotMatch("\nUsername not match");
+		
+    	loginUtil.updateLogin(key, username, password);
+		
+	}
+    
+    public void deleteLoginUser() {
+    	
+    	String key;
+		String username;
+	
+		System.out.print("Enter username: ");
+		key = scanner.nextLine();
+		System.out.print("Verify username: ");
+		username = scanner.nextLine();
+		
+		if(!key.equals(username))throw new NotMatch("\nUsername not match");
+	
+    	
+    	loginUtil.deletelogin(key);
+	}
+    
+    public void ifNotFound(String key) {
+    
+    	if (loginUtil.checkidexist(key) == false) throw new findbyidError("Username: "+ key +" not found or not exist");
+  
+    	
+    }
+    
+     public void ifFound(String key) {
+    	 if (loginUtil.checkidexist(key) == true) throw new findbyidError("Username: "+ key +" is exist cannot be created. Input another username..");
+    	
+    }
+	
+	
+	
+
+}

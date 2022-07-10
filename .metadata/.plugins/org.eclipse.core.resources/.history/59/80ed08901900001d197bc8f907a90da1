@@ -1,0 +1,37 @@
+package Student;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class LoginUtil {
+	
+	static HashMap<String, LoginEntity> sMap = (HashMap<String, LoginEntity>) datas();
+
+	public static Map<String, LoginEntity> datas() {
+		
+		sMap.put("conred", new LoginEntity("conred","1234"));
+		sMap.put("batman", new LoginEntity("batman","1234"));
+		sMap.put("superman", new LoginEntity("superman","1234"));
+		
+		
+		
+		return sMap;
+	}
+	
+	public static void main(String[] args) {
+		
+		for(Map.Entry datamap: sMap.entrySet()) {
+			System.out.println(datamap.getKey()+" : "+ datamap.getValue());
+		}
+	}
+	}
+	
+	
+	public  void ListInfo() {
+		for(Map.Entry datamap: sMap.entrySet()) {
+			System.out.println(datamap.getKey()+" : "+ datamap.getValue());
+		}
+	}
+	
+
+}
