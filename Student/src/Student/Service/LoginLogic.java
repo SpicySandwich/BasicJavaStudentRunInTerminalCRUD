@@ -34,7 +34,10 @@ public class LoginLogic {
 			System.out.print("Enter password: ");
 			password = scanner.nextLine();
 
-			if(validation.checkpassword(username, password) == valid) inputChoice.returnChoice(); 
+			if(validation.checkpassword(username, password) == valid) {
+				System.out.println("\nSuccefully login "+username);
+				inputChoice.returnChoice(); 	
+			} 
 			else {
 				validation.coutAttempt(--countTry);
 			}

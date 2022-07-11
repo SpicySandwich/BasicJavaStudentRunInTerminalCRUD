@@ -62,7 +62,8 @@ public class StudentLogic {
 	    int countSubject = 0;
 	    
 	    List<String> strings = new ArrayList<String>();
-	     
+	    
+	    System.out.print("\nSubject List: [ITF] [P] [DS] [CO] [M] [S] [E]\n");
 	     do {
 	    	 System.out.print( ++countSubject + ": Enter Subject: ");
 	    	 String subject = scanner.nextLine().toUpperCase();
@@ -100,7 +101,7 @@ public class StudentLogic {
 		System.out.print("Age: ");
 		String age = scanner.nextLine();
 		
-		System.out.print("Course: ");
+		System.out.print("\nCourse List: [BSIT] [BSA] [BSCE] [BSTM]\nCourse: ");
 		String course = scanner.nextLine();
 
 		
@@ -108,7 +109,7 @@ public class StudentLogic {
 		    int countSubject = 0;
 		    
 		    List<String> strings = new ArrayList<String>();
-		     
+		    System.out.print("\nSubject List: [ITF] [P] [DS] [CO] [M] [S] [E]\nMust have 4 Subject\n");
 		     do {
 		    	 System.out.print( ++countSubject + ": Enter Subject: ");
 		    	 String subject = scanner.nextLine().toUpperCase();

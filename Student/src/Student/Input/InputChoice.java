@@ -34,7 +34,7 @@ public class InputChoice {
 					studentLogic.createdata();;
 					returnChoice();
 				case "logout":
-					logout();
+					validationLogoutreturnChoice();
 				default:
 					wrongChoice(choice);
 			}
@@ -69,7 +69,7 @@ public class InputChoice {
 				returnLlogin();
 				
 			case "logout":
-				logout();
+				validationLogoutreturnLlogin();
 			
 			default:
 				wrongInputLogin(choice);
@@ -91,15 +91,58 @@ public class InputChoice {
 		returnLlogin();
 		
 	}
+
+	
+	public void validationLogoutreturnChoice() {
+		
+		System.out.print("\nAre you sure to logout?\nEnter [Yes] or [No]\nEnter: ");
+		String choice = scanner.nextLine();
+		
+      switch (choice.toLowerCase()) {
+			
+			
+			case "yes":
+				logout();
+				
+			case "no":
+				returnChoice();
+			default:
+				validationLogoutreturnChoice();
+		}
+		
+		scanner.close();
+		
+		
+	}
+	
+public void validationLogoutreturnLlogin() {
+		
+	System.out.print("\nAre you sure to logout?\nEnter [Yes] or [No]\nEnter: ");
+		String choice = scanner.nextLine();
+		
+      switch (choice.toLowerCase()) {
+			
+			
+			case "yes":
+				logout();
+				
+			case "no":
+				returnLlogin();
+			default:
+				validationLogoutreturnLlogin();
+		}
+		
+		scanner.close();
+		
+		
+	}
+	
+	
 	
 	public void logout() {
 		
 		System.out.println("\nSuccesfully logout\n");
-		System.exit(0);
-		
-		
-		
-		
+		System.exit(0);	
 		
 	}
 
