@@ -1,40 +1,42 @@
 package Student.Validation;
 
 import Student.Input.InputChoice;
-import Student.ModelException.AgeErrorhandling;
-import Student.ModelException.NameErrorHandling;
-import Student.ModelException.findbyidError;
 
-public class StudentValidation implements validationInterface{
+
+public class StudentValidation {
 
 	InputChoice inputChoice = new InputChoice();
+	
 
-	@Override
-	public String checkname(String name) {
+	
+	public String checkString(String name) {
 		
-	if (name.isEmpty() || name == null) throw new NameErrorHandling("Name Error");
-		
-		return name;
+	if (name.isEmpty() || name == null) {
+		System.err.println("\nUnsuccessful Name is Empty\n");
+		 inputChoice.returnChoice();
+	}return name;
+	
 	}
 
-	@Override
 	public Integer checkage(Integer age) {
 		
 	
-	if (null == age || age == 0) throw new AgeErrorhandling("Age Error");
-		
-	else if(age <= 17) throw new AgeErrorhandling("Under Age");
-		
-		return age;
+	if (null == age || age == 0) {
+		System.err.println("\nUnsuccessful Age Error\n");
+		 inputChoice.returnChoice();
+	}else if(age <= 17) {
+		System.err.println("\nUnsuccessful Under Age\n");
+		 inputChoice.returnChoice();
+	} return age;
+	
 	}
 
-	@Override
 	public Integer checkid(Integer id) {
 		
-		if (null == id || id == 0) throw new findbyidError("Id not found");
-
-	    
-		return id;
+		if (null == id || id == 0) {
+			System.err.println("\nUnsuccessful Id: "+id+" not found\"\n");
+			 inputChoice.returnChoice();
+		} return id;
 		
 	}
 	

@@ -2,8 +2,8 @@ package Student.Input;
 
 import java.util.Scanner;
 
-import Student.Service.LoginLogic;
-import Student.Service.StudentLogic;
+import Student.Service.TeacherService;
+import Student.Service.StudentService;
 
 public class InputChoice {
 	
@@ -12,7 +12,7 @@ public class InputChoice {
 	public void returnChoice() {
 		
 		
-		StudentLogic studentLogic = new StudentLogic();
+		StudentService studentLogic = new StudentService();
 		
 		System.out.print("\n\nStudent Info\n\nEnter: [find] [list] [delete] [update] [add] [logout]\n\nChoose a function: ");
 		 String choice = scanner.nextLine();
@@ -43,9 +43,9 @@ public class InputChoice {
 			
 	}
 	
-	public void returnLlogin() {
+	public void returnTeacher() {
 		
-		LoginLogic logic = new LoginLogic();
+		TeacherService logic = new TeacherService();
 		System.out.print("\nWelcome\n\nEnter: [login] [add] [update] [delete] [logout]\n\nPlease choose: ");
 		String choice = scanner.nextLine();
 		
@@ -54,19 +54,19 @@ public class InputChoice {
 			
 			case "login":
 				logic.login();
-				returnLlogin();
+				returnTeacher();
 				
 			case "add":
 				logic.addLoginUser();
-				returnLlogin();
+				returnTeacher();
 				
 			case "update":
 				logic.updateLoginUser();
-				returnLlogin();
+				returnTeacher();
 				
 			case "delete":
 				logic.deleteLoginUser();;
-				returnLlogin();
+				returnTeacher();
 				
 			case "logout":
 				validationLogoutreturnLlogin();
@@ -88,7 +88,7 @@ public class InputChoice {
 	public void wrongInputLogin(String string) {
 		
 		System.err.println("Invalid "+string+" please input again...");
-		returnLlogin();
+		returnTeacher();
 		
 	}
 
@@ -127,7 +127,7 @@ public void validationLogoutreturnLlogin() {
 				logout();
 				
 			case "no":
-				returnLlogin();
+				returnTeacher();
 			default:
 				validationLogoutreturnLlogin();
 		}

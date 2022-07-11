@@ -5,17 +5,18 @@ import java.util.List;
 import java.util.Scanner;
 
 import Student.Converter.Convert;
-import Student.DAO.DataUtil;
+import Student.DAO.StudentDataUtil;
 import Student.Entity.StudentEntity;
-import Student.ModelException.findbyidError;
+import Student.Input.InputChoice;
 import Student.Validation.StudentValidation;
 
-public class StudentLogic {
+public class StudentService {
 	
 	StudentEntity studentEntity = new StudentEntity();
 	StudentValidation studentValidation = new StudentValidation();
+	InputChoice inputChoice = new InputChoice();
 	static Scanner scanner = new Scanner(System.in);
-	static DataUtil dataUtil = new DataUtil();
+	static StudentDataUtil dataUtil = new StudentDataUtil();
 	static Convert convert = new Convert();
 
 
@@ -25,7 +26,7 @@ public class StudentLogic {
 
 		System.out.print("Find by id: ");
 		String idstring = scanner.nextLine();
-		checkidnotpresent(idstring);
+		checkidnotpresent(studentValidation.checkString(idstring));
 		Integer id = Integer.parseInt(convert.convert(idstring));
 		dataUtil.getInfoById(studentValidation.checkid(id));
 	}
@@ -39,7 +40,7 @@ public class StudentLogic {
 		
 		System.out.print("Delete by id: ");
 		String idstring = scanner.nextLine();
-		checkidnotpresent(idstring);
+		checkidnotpresent(studentValidation.checkString(idstring));
 		Integer id = Integer.parseInt(convert.convert(idstring));
 		dataUtil.deleteById(studentValidation.checkid(id));
 		System.out.println("Succefulley Delete id : "+ id);
@@ -49,7 +50,7 @@ public class StudentLogic {
 		
 		System.out.print("update by id: ");
 		String idstring = scanner.nextLine();
-		checkidnotpresent(idstring);
+		checkidnotpresentUpdate(studentValidation.checkString(idstring));
 		System.out.print("Name: ");
 		String name = scanner.nextLine();
 		System.out.print("Age: ");
@@ -83,7 +84,7 @@ public class StudentLogic {
 		
 		dataUtil.updateById(
 				studentValidation.checkid(id),
-				studentValidation.checkname(name),
+				studentValidation.checkString(name),
 				studentValidation.checkage(age2),
 				course,
 				strings
@@ -95,12 +96,11 @@ public class StudentLogic {
 
 		System.out.print("create id: ");
 		String idstring = scanner.nextLine();
-		checkidpresent(idstring);
 		System.out.print("Name: ");
 		String name = scanner.nextLine();
 		System.out.print("Age: ");
 		String age = scanner.nextLine();
-		
+		checkidpresent(studentValidation.checkString(idstring));
 		System.out.print("\nCourse List: [BSIT] [BSA] [BSCE] [BSTM]\nCourse: ");
 		String course = scanner.nextLine();
 
@@ -117,8 +117,7 @@ public class StudentLogic {
 		    	 insertSubject--;
 			
 		     } while (insertSubject > 0);   
-				
-			
+
 			
 			if(insertSubject == 0)System.out.println("Subject is 4 max only");
 			
@@ -132,7 +131,7 @@ public class StudentLogic {
 		
 		dataUtil.createdata(
 				studentValidation.checkid(id), 
-				studentValidation.checkname(name),
+				studentValidation.checkString(name),
 				studentValidation.checkage(age2),
 				course,
 				strings
@@ -140,14 +139,35 @@ public class StudentLogic {
 		System.out.println("Succefully created data with id:"+id);
 	}
 	
-	 public void checkidnotpresent(String idstring) {
+	 public boolean checkidnotpresent(String idstring) {
+		 boolean valid = true;
 			Integer id = Integer.parseInt(convert.convert(idstring));
-			if (dataUtil.checkidexist(id) == false) throw new findbyidError("ID: "+ id +" not found or not exist");
+			if (dataUtil.checkidexist(id) == false) {
+				System.err.println("\nID: "+ id +" not found or not exist");
+				inputChoice.returnChoice();
+			} 
+			return valid;
 				
 		}
 	 public void checkidpresent(String idstring) {
 			Integer id = Integer.parseInt(convert.convert(idstring));
-			if (dataUtil.checkidexist(id) == true) throw new findbyidError("ID: "+ id +" is exist cannot be created. Input another ID..");
+			if (dataUtil.checkidexist(id) == true) {
+				System.err.println("\nID: "+ id +" is exist cannot be created. Input another ID..");
+				inputChoice.returnChoice();
+			} 
+				
+		}
+	 
+	 public boolean checkidnotpresentUpdate(String idstring) {
+        
+		 boolean valid = true;
+			Integer id = Integer.parseInt(convert.convert(idstring));
+			if (dataUtil.checkidexist(id) == false) {
+				System.err.println("\nID: "+ id +" not found or not exist to be updated");
+				inputChoice.returnChoice();
+				
+			} 
+			return valid;
 				
 		}
 	 

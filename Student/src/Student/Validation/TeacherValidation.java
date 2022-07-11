@@ -1,18 +1,18 @@
 package Student.Validation;
 
-import Student.DAO.LoginUtil;
-import Student.Entity.LoginEntity;
+import Student.DAO.TeacherDataUtil;
+import Student.Entity.TeacherEntity;
 
-public class LoginValidation {
+public class TeacherValidation {
 	
 	
 	public boolean checkpassword(String username,String password) {
 		
 
-		 LoginUtil loginUtil = new LoginUtil();
+		 TeacherDataUtil loginUtil = new TeacherDataUtil();
 		 
 	
-		LoginEntity loginEntity =loginUtil.checkforlogin(username);
+		TeacherEntity loginEntity =loginUtil.checkforlogin(username);
 		 
 		 
 		 if ( 

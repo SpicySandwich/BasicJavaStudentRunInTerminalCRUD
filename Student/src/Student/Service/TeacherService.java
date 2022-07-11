@@ -2,17 +2,15 @@ package Student.Service;
 
 import java.util.Scanner;
 
-import Student.DAO.LoginUtil;
+import Student.DAO.TeacherDataUtil;
 import Student.Input.InputChoice;
-import Student.ModelException.NotMatch;
-import Student.ModelException.findbyidError;
-import Student.Validation.LoginValidation;
+import Student.Validation.TeacherValidation;
 
-public class LoginLogic {
+public class TeacherService {
 	
 	static Scanner scanner = new Scanner(System.in);
-	static LoginUtil loginUtil = new LoginUtil();
-	static LoginValidation validation = new LoginValidation();
+	static TeacherDataUtil loginUtil = new TeacherDataUtil();
+	static TeacherValidation validation = new TeacherValidation();
 	static InputChoice inputChoice = new InputChoice();
 	
 	
@@ -35,7 +33,7 @@ public class LoginLogic {
 			password = scanner.nextLine();
 
 			if(validation.checkpassword(username, password) == valid) {
-				System.out.println("\nSuccefully login "+username);
+				System.out.println("\nSuccefully login\n\nWelcome teacher "+username+". ");
 				inputChoice.returnChoice(); 	
 			} 
 			else {
@@ -72,8 +70,8 @@ public class LoginLogic {
 		
 		ifFound(username);
 		
-		if(!password.equals(passwordverify)) throw new NotMatch("\nPassword not match");
-		if(!key.equals(username))throw new NotMatch("\nUsername not match");
+		if(!password.equals(passwordverify)) System.err.println("\nPassword not match");
+		if(!key.equals(username))System.err.println("\nUsername not match");
 		
 		loginUtil.addlogin(key, username, password);
 		
@@ -101,8 +99,8 @@ System.out.println("Update User\n");
 		ifNotFound(username);
 		
 		
-		if(!password.equals(passwordverify)) throw new NotMatch("\nPassword not match");
-		if(!key.equals(username))throw new NotMatch("\nUsername not match");
+		if(!password.equals(passwordverify)) System.err.println("\nPassword not match");
+		if(!key.equals(username))System.err.println("\nUsername not match");
 		
     	loginUtil.updateLogin(key, username, password);
 		
@@ -118,7 +116,7 @@ System.out.println("Update User\n");
 		System.out.print("Verify username: ");
 		username = scanner.nextLine();
 		
-		if(!key.equals(username))throw new NotMatch("\nUsername not match");
+		if(!key.equals(username))System.err.println("\nUsername not match");
 	
     	
     	loginUtil.deletelogin(key);
@@ -128,12 +126,12 @@ System.out.println("Update User\n");
     
     public void ifNotFound(String key) {
     
-    	if (loginUtil.checkidexist(key) == false) throw new findbyidError("Username: "+ key +" not found or not exist");
+    	if (loginUtil.checkidexist(key) == false) System.err.println("Username: "+ key +" not found or not exist");
 
     }
     
      public void ifFound(String key) {
-    	 if (loginUtil.checkidexist(key) == true) throw new findbyidError("Username: "+ key +" is exist cannot be created. Input another username..");
+    	 if (loginUtil.checkidexist(key) == true) System.err.println("Username: "+ key +" is exist cannot be created. Input another username..");
     	
     }
 	

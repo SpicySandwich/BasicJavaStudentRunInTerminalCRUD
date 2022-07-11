@@ -1,6 +1,6 @@
 package Student.Entity;
 
-public class LoginEntity {
+public class TeacherEntity {
 	
 	private String username;
 	private String password;
@@ -8,11 +8,11 @@ public class LoginEntity {
 	
 	
 	
-	public LoginEntity() {
+	public TeacherEntity() {
 		super();
 	}
 
-	public LoginEntity(String username, String password) {
+	public TeacherEntity(String username, String password) {
 		this.username = username;
 		this.password = password;
 	}
